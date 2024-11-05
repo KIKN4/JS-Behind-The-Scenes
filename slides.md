@@ -1,59 +1,35 @@
 ---
-# You can also start simply with 'default'
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: "/images/js.photo.jpeg"
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply unocss classes to the current slide
-class: text-center
-# https://sli.dev/features/drawing
-drawings:
-  persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
-mdc: true
-# take snapshot for each slide in the overview
-overviewSnapshots: true
+background: "/js.photo.jpeg"
 ---
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
 
-# How JavaScript Works Behind the Scenes?
+# Overview of the slides
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+<br>
+🌐 An High-Level Overview of Javascript
+<br>
+<br>
 
-- 📝 **Text-based** - An High-Level Overview of Javascript
-- 🎨 **Themable** - The JavaScript Engine and Runtime
-- 🧑‍💻 **Developer Friendly** - Execution Contexts and the call Stack
-- 🤹 **Interactive** - Scope and The Scope Chain
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-  <br>
-  <br>
+🚀 The JavaScript Engine and Runtime
+<br>
+<br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+🧠 Execution Contexts and the Call Stack
+<br>
+<br>
+
+🔗 Scope and The Scope Chain
+<br>
+<br>
+
+🔄 Variable Environment
+<br>
+<br>
+
+⚖️ Dynamic vs Static Memory
+<br>
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -62,8 +38,8 @@ Learn more: https://sli.dev/features/slide-scope-style
 
 <style>
 h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-color: #F0C808;
+  background-image: linear-gradient(45deg, #F7DF1E 10%, #D4A017 20%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -78,604 +54,517 @@ Here is another comment.
 
 ---
 
-transition: slide-up
-level: 2
+<img src="/public/js.photo2.jpg" style="height: 100%">
 
 ---
 
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
+<div class="scrollable-container">
 
 |                                                    |                             |
 | -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
+| <kbd>High-level </kbd>                | რესურსების მართვა ჩვენ არ გვჭირდება, Javascriopt-ის ძრავა ამას ავტომატურად აკეთებს    |
+| <kbd>Garbage-collected</kbd> | მეხსიერების მართვა. ალგორითმი JavaScript ძრავაში, რომელიც ავტომატურად შლის ძველ და გამოუყენებელ ობიექტებს |
+| <kbd>Interpreted or just-in-time compiled</kbd> | კოდი კომპილირდება შესრულებისას, რაც უზრუნველყოფს უფრო სწრაფ შესრულებას. |
+| <kbd>Multi-paradigm</kbd>  | პროცედურული პროგრამირება, ობიექტზე ორიენტირებული პროგრამირება, ფუნქციური პროგრამირება. შეგვიძლია გამოვიყენოთ ნებისმიერი პარადიგმა, რომელიც გვსურს |
+| <kbd>Prototype-based object-oriented</kbd> | ``` const arr = [1,2,3] ``` ```array.push(4)``` ```->``` ``` Array.prototype.push```|
+| <kbd>First-class functions</kbd>                                    | ფუნქციები განიხილება როგორც "ცვლადები". შეგვიძლია გამოვიყენოთ ისინი სხვა ფუნქციებში ან დავაბრუნოთ სხვა ფუნქციებიდან. ```overlay.addEventListener("click", someFunctionName)```|
+| <kbd>Dynamic Memory</kbd> | JavaScript-ში ცვლადებს არ ვანიჭებთ მონაცემთა ტიპებს.მეხსიერება გამოიყოფა შესრულების დროს, რაც უზრუნველყოფს უფრო მოქნილ და ეფექტურ მეხსიერების მართვას. |
+| <kbd>Static Memory</kbd> |	მეხსიერება წინასწარ არის განსაზღვრული და მისი ზომა არ იცვლება პროგრამის შესრულებისას|
+| <kbd>Single-threaded</kbd>  | როგორ უმკლავდება JavaScript ძრავა მრავალ ამოცანას ერთდროულად? 👉 JavaScript მუშაობს ერთი single thread-ით, ამიტომ ერთდროულად მხოლოდ ერთ ამოცანას ასრულებს |
+| <kbd>Non-blocking event loop</kbd>                                    | ```Event Loop``` არის უწყვეტი პროცესი, რომელიც მართავს კოდის შესრულებას, ახორციელებს call stack-ის, microtask queue-ის და callback queue-ის მართვას, რათა უზრუნველყოს ასინქრონული ოპერაციების ეფექტური და არაბლოკირებული შესრულება JavaScript-ში|
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
+</div>
 
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
+<style>
+.scrollable-container {
+  max-height: 400px; /* განუსაზღვრეთ სიმაღლე */
+  overflow-y: auto; /* ვერტიკალური სქროლის გააქტიურება */
+}
 
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+kbd {
+  font-size: 10px;
+  display: inline-block;
+  margin-bottom: 2px;
+  margin: 0px;
+}
+
+td {
+  font-size: 12px; 
+  padding: 8.5px;
+  margin: 0px;
+}
+
+</style>
 
 ---
 
+<img src="/public/js.photo3.jpg" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/JS.ENGINGE.png" style="height: 100%; width: 100%;">
+
+---
 layout: two-cols
-layoutClass: gap-16
-
 ---
 
-# Table of contents
+```ts 
 
-You can use the `Toc` component to generate a table of contents for your slides:
+const name = 'Jonas';
 
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
+};
+
+function second(x, y) {
+  var c = 2;
+  return c;
+}
+
+const x = first();
 ```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
 
 ::right::
 
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
-
----
-
-layout: image-right
-image: https://cover.sli.dev
-
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from "vue";
-
-const count = ref(0);
-const doubled = computed(() => count.value * 2);
-
-doubled.value = 2;
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
 ```
 
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
 ---
-
-## level: 2
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
+layout: two-cols
+---
 
 ````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-});
-```
+```ts {1}
 
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: "John Doe",
-        books: [
-          "Vue 2 - Advanced Guide",
-          "Vue 3 - Basic Guide",
-          "Vue 4 - The Mystery",
-        ],
-      },
-    };
-  },
+const name = 'Jonas';
+
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
 };
-```
 
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: "John Doe",
-      books: [
-        "Vue 2 - Advanced Guide",
-        "Vue 3 - Basic Guide",
-        "Vue 4 - The Mystery",
-      ],
-    },
-  }),
-};
-```
+function second(x, y) {
+  var c = 2;
+  return c;
+}
 
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-};
-</script>
+const x = first();
 ```
 ````
 
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-
-## class: px-20
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-
-$$
-{1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
+::right::
 
 ```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+    subgraph Global[Global]
+        nameVariable[name =  John]
+    end
+    GlobalContext -->|Creates| Global
 ```
 
-```plantuml {scale: 0.7}
-@startuml
+---
+layout: two-cols
+---
 
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
+````md magic-move {lines: true}
+```ts {3}
+
+const name = 'Jonas';
+
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
+};
+
+function second(x, y) {
+  var c = 2;
+  return c;
 }
 
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
+const x = first();
+```
+````
+
+::right::
+
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+    subgraph Global[Global]
+        nameVariable[name =  John]
+        firstFN[first = function ]
+    end
+    GlobalContext --> Global
+```
+
+---
+layout: two-cols
+---
+
+````md magic-move {lines: true}
+```ts {10}
+
+const name = 'Jonas';
+
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
+};
+
+function second(x, y) {
+  var c = 2;
+  return c;
 }
 
-cloud {
-  [Example 1]
+const x = first();
+```
+````
+
+::right::
+
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+    subgraph Global[Global]
+        nameVariable[name =  John]
+        firstFN[first = function ]
+        secondFN[second = function ]
+    end
+    GlobalContext --> Global
+```
+
+---
+layout: two-cols
+---
+
+````md magic-move {lines: true}
+```ts {15}
+
+const name = 'Jonas';
+
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
+};
+
+function second(x, y) {
+  var c = 2;
+  return c;
 }
 
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
+const x = first();
+```
+````
+
+::right::
+
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+    subgraph Global[Global]
+        nameVariable[name =  John]
+        firstFN[first = function ]
+        secondFN[second = function ]
+        x[x = unknown ]
+    end
+    GlobalContext --> Global
+```
+
+---
+layout: two-cols
+---
+
+````md magic-move {lines: true}
+```ts {4-7}
+
+const name = 'Jonas';
+
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
+};
+
+function second(x, y) {
+  var c = 2;
+  return c;
 }
 
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
+const x = first();
+```
+````
 
-@enduml
+::right::
+
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+   
+    subgraph LocalContext1[local execution context1]
+        aVariable[a = 1]
+        bVariable[b = unknown]
+    end
+
+    GlobalContext --->|Creates| LocalContext1
 ```
 
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
+---
+layout: two-cols
 ---
 
-foo: bar
-dragPos:
-square: 691,32,167,\_,-16
+````md magic-move {lines: true}
+```ts {11-12}
 
----
+const name = 'Jonas';
 
-dragPos:
-square: -17,0,0,0
+const first = () => {
+  let a = 1;
+  const b = second(7, 9);
+  a = a + b;
+  return a;
+};
 
----
+function second(x, y) {
+  var c = 2;
+  return c;
+}
 
-dragPos:
-square: -17,0,0,0
-
----
-
-dragPos:
-square: -17,0,0,0
-
----
-
-dragPos:
-square: 0,-81,0,0
-
----
-
-dragPos:
-square: 0,-81,0,0
-
----
-
-dragPos:
-square: 0,-81,0,0
-
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
-<br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
+const x = first();
 ```
+````
 
-<br>
+::right::
 
-###### Component Usage
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+   
+    subgraph LocalContext1[local execution context1]
+        aVariable[a = 1]
+        bVariable[b = unknown]
+    end
 
-```md
-<v-drag text-3xl>
-  <carbon:arrow-up />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
+    subgraph LocalContext2[second function]
+        cVariable[c = 2]
+        arguments[arguments = 7, 9]
+    end
 
-<v-drag pos="608,105,283,\_"undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined>
-
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-
-src: ./pages/imported-slides.md
-hide: false
-
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from "vue";
-import { emptyArray } from "./external";
-
-const arr = ref(emptyArray(10));
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from "vue";
-import { emptyArray, sayHello } from "./external";
-
-sayHello();
-console.log(`vue ${version}`);
-console.log(
-  emptyArray<number>(10).reduce(
-    (fib) => [...fib, fib.at(-1)! + fib.at(-2)!],
-    [1, 1]
-  )
-);
+    GlobalContext --->|Creates| LocalContext1
+    GlobalContext --->|Creates| LocalContext2
 ```
 
 ---
 
-layout: center
-class: text-center
+```mermaid
+graph TD
+    GlobalContext[Global Execution Context]
+    subgraph Global[Global]
+        nameVariable[name =  John]
+        firstFN[first = function ]
+        secondFN[second = function ]
+        x[x = unknown ]
+    end
+
+    subgraph LocalContext1[first function]
+        aVariable[a = 1]
+        bVariable[b = unknown]
+    end
+
+    subgraph LocalContext2[second function]
+        cVariable[c = 2]
+        arguments[arguments = 7, 9]
+    end
+
+    GlobalContext --> Global
+    GlobalContext --> LocalContext1
+    GlobalContext --> LocalContext2
+```
 
 ---
 
-# Learn More
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+<img src="/public/js.excontext1.png" style="height: 100%; width: 100%;">
 
-<PoweredBySlidev mt-10 />
+---
+
+<img src="/public/js.callstack1.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack2.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack3.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack5.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack6.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack7.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack8.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack9.png" style="height: 100%; width: 100%;">
+
+---
+
+<img src="/public/js.callstack10.png" style="height: 100%; width: 100%;">
+
+---
+layout: two-cols
+---
+
+```mermaid
+graph TD
+    EventLoop[Event Loop] -->|Checks Call Stack| CallStack
+    EventLoop -->|Processes Microtasks| MicrotaskQueue
+    EventLoop -->|Processes Task Queue if Call Stack is empty| TaskQueue
+    CallStack --> Execution[Execution]
+    MicrotaskQueue --> CallStack
+    TaskQueue --> CallStack
+```
+
+::right::
+
+- Event Loop: მართავს კოდის შესრულებას, ამოწმებს Call Stack-ს და ამუშავებს Microtask Queue-სა და Task Queue-ს.
+
+- Microtask Queue: შეიცავს მაღალი პრიორიტეტით ასინქრონულ ოპერაციებს (Promises და სხვ..). აქ მოთავსებული ფუნქციები გადადის Call Stack-ში პირველი ვიდრე Task Queue-ში მოთავსებული ფუნქციები
+
+- Task Queue: შეიცავს სხვა ტიპის ასინქრონულ ოპერაციებს (setTimeout, I/O). აქ მოთავსებული ფუნქციები გადადის Call Stack-ში მხოლოდ მას შემდეგ, რაც Microtask Queue  და Call Stack ცარიელია.
+
+- Call Stack: ასრულებს კოდს თანმიმდევრულად.
+
+- Execution: კოდის საბოლოო შესრულება Call Stack-ში
+
+---
+layout: two-cols
+---
+
+```mermaid
+graph TD
+    subgraph WebAPIs[Web APIs]
+        DOM[DOM]
+        Timers[Timers]
+        FetchAPI[Fetch API]
+    end
+    subgraph Queue[Callback Queue]
+        
+    end
+    CallStack[Call Stack]
+    WebAPIs --> Queue
+    Queue --> CallStack
+```
+
+::right::
+
+- Web APIs-ში მოთავსებულია სხვადასხვა ფუნქციები
+
+- როგორიცაა DOM, Timers და Fetch API
+
+- Callback Queue ცარიელია
+
+- Call Stack ელოდება ახალ ამოცანებს.
+
+---
+layout: two-cols
+---
+
+```mermaid
+graph TD
+    subgraph WebAPIs[Web APIs]
+        DOM[DOM]
+        Timers[Timers]
+        FetchAPI[Fetch API]
+    end
+    subgraph Queue[Callback Queue]
+        OnClick[onClick]
+    end
+    CallStack[Call Stack]
+    WebAPIs --> Queue
+    Queue --> CallStack
+```
+
+::right::
+
+- ხდება DOM მოვლენა (click)  
+
+- შესაბამისი callback გადადის Callback Queue-ში.
+
+- Event Loop ამოწმებს, რომ Call Stack ცარიელია და მზად არის Callback Queue-დან ელემენტების გადასატანად call stack ში.
+
+---
+layout: two-cols
+---
+
+```mermaid
+graph TD
+    subgraph WebAPIs[Web APIs]
+        DOM[DOM]
+        Timers[Timers]
+        FetchAPI[Fetch API]
+    end
+    subgraph Queue[Callback Queue]
+    end
+    subgraph CallStack[Call Stack]
+        OnClick[onClick]
+    end
+    WebAPIs --> Queue
+    Queue --> CallStack
+```
+
+::right::
+
+- onClick callback გადადის Call Stack-ში და იწყებს შესრულებას
+
+- Callback Queue დაცარიელდა 
+
+- Call Stack მუშაობს, სანამ ფუნქცია არ დასრულდება და სტეკიდან ამოიშლება.
+
+---
+layout: two-cols
+---
+
+```mermaid
+graph TD
+    subgraph WebAPIs[Web APIs]
+        DOM[DOM]
+        Timers[Timers]
+        FetchAPI[Fetch API]
+    end
+    subgraph Queue[Callback Queue]
+        
+    end
+    CallStack[Call Stack]
+    WebAPIs --> Queue
+    Queue --> CallStack
+```
+
+::right::
+
+- შესრულდა ყველაფერი და callstack იც გაცარიელდა
