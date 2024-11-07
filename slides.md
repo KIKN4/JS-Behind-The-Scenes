@@ -66,16 +66,16 @@ Here is another comment.
 
 |                                                    |                             |
 | -------------------------------------------------- | --------------------------- |
-| <kbd>High-level </kbd>                | რესურსების მართვა ჩვენ არ გვჭირდება, Javascriopt-ის ძრავა ამას ავტომატურად აკეთებს    |
-| <kbd>Garbage-collected</kbd> | მეხსიერების მართვა. ალგორითმი JavaScript ძრავაში, რომელიც ავტომატურად შლის ძველ და გამოუყენებელ ობიექტებს |
-| <kbd>Interpreted or just-in-time compiled</kbd> | კოდი კომპილირდება შესრულებისას, რაც უზრუნველყოფს უფრო სწრაფ შესრულებას. |
-| <kbd>Multi-paradigm</kbd>  | პროცედურული პროგრამირება, ობიექტზე ორიენტირებული პროგრამირება, ფუნქციური პროგრამირება. შეგვიძლია გამოვიყენოთ ნებისმიერი პარადიგმა, რომელიც გვსურს |
+| <kbd>High-level </kbd>                | We don't need to manage resources; the JavaScript engine does it automatically. |
+| <kbd>Garbage-collected</kbd> | Memory management: an algorithm in the JavaScript engine automatically removes old and unused objects. |
+| <kbd>Interpreted or just-in-time compiled</kbd> | Code is compiled at runtime, enabling faster execution. |
+| <kbd>Multi-paradigm</kbd>  | Procedural programming, object-oriented programming, functional programming. We can use any paradigm we prefer. |
 | <kbd>Prototype-based object-oriented</kbd> | ``` const arr = [1,2,3] ``` ```array.push(4)``` ```->``` ``` Array.prototype.push```|
-| <kbd>First-class functions</kbd>                                    | ფუნქციები განიხილება როგორც "ცვლადები". შეგვიძლია გამოვიყენოთ ისინი სხვა ფუნქციებში ან დავაბრუნოთ სხვა ფუნქციებიდან. ```overlay.addEventListener("click", someFunctionName)```|
-| <kbd>Dynamic Memory</kbd> | JavaScript-ში ცვლადებს არ ვანიჭებთ მონაცემთა ტიპებს.მეხსიერება გამოიყოფა შესრულების დროს, რაც უზრუნველყოფს უფრო მოქნილ და ეფექტურ მეხსიერების მართვას. |
-| <kbd>Static Memory</kbd> |	მეხსიერება წინასწარ არის განსაზღვრული და მისი ზომა არ იცვლება პროგრამის შესრულებისას|
-| <kbd>Single-threaded</kbd>  | როგორ უმკლავდება JavaScript ძრავა მრავალ ამოცანას ერთდროულად? 👉 JavaScript მუშაობს ერთი single thread-ით, ამიტომ ერთდროულად მხოლოდ ერთ ამოცანას ასრულებს |
-| <kbd>Non-blocking event loop</kbd>                                    | ```Event Loop``` არის უწყვეტი პროცესი, რომელიც მართავს კოდის შესრულებას, ახორციელებს call stack-ის, microtask queue-ის და callback queue-ის მართვას, რათა უზრუნველყოს ასინქრონული ოპერაციების ეფექტური და არაბლოკირებული შესრულება JavaScript-ში|
+| <kbd>First-class functions</kbd> | Functions are treated as "variables" and can be passed into or returned from other functions. ```overlay.addEventListener("click", someFunctionName)```|
+| <kbd>Dynamic Memory</kbd> | In JavaScript, variables don't have fixed data types. Memory is allocated at runtime, making memory management more flexible and efficient. |
+| <kbd>Static Memory</kbd> | Memory size is pre-defined and does not change during the program’s execution. |
+| <kbd>Single-threaded</kbd>  | How does the JavaScript engine handle multiple tasks at once? 👉 JavaScript runs on a single thread, so it can only do one thing at a time. |
+| <kbd>Non-blocking event loop</kbd>                                    | The ```Event Loop``` is a continuous process that manages code execution by handling the call stack, microtask queue, and callback queue, ensuring efficient and non-blocking execution of asynchronous operations in JavaScript. |
 
 </div>
 
@@ -456,15 +456,15 @@ graph TD
 
 ::right::
 
-- Event Loop: მართავს კოდის შესრულებას, ამოწმებს Call Stack-ს და ამუშავებს Microtask Queue-სა და Task Queue-ს.
+- Event Loop: Manages code execution by checking the Call Stack and processing the Microtask and Task Queues.
 
-- Microtask Queue: შეიცავს მაღალი პრიორიტეტით ასინქრონულ ოპერაციებს, როგორიცაა Promise, then და catch ქოლბექები და სხვა ოპერაციები, რომლებსაც უფრო სწრაფად შესრულება სჭირდებათ. Event Loop ყოველთვის ამუშავებს პირველი Microtask Queue-ში არსებულ ფუნქციებს, სანამ Task Queue-ზე გადაინაცვლებს. ამიტომ, Microtask Queue-ში მოთავსებული ოპერაციები ყოველთვის Call Stack-ში უფრო ადრე ხვდება, ვიდრე Task Queue-ში არსებული ფუნქციები.
+- Microtask Queue: Contains high-priority async tasks like Promise, then, and catch callbacks. The Event Loop always processes these before moving to the Task Queue, so they enter the Call Stack first.
 
-- Task Queue (Callback Queue): შეიცავს დაბალი პრიორიტეტით ასინქრონულ ოპერაციებს, როგორიცაა setTimeout, setInterval, I/O ოპერაციები და DOM მოვლენების callback-ები. ამ ოპერაციების ქოლბექები გადადის Call Stack-ში მხოლოდ მაშინ, როდესაც Microtask Queue და Call Stack ორივე ცარიელია. Task Queue-ის ელემენტები მორიგეობით ხვდებიან Call Stack-ში, როცა მასში ადგილი გათავისუფლდება.
+- Task Queue (Callback Queue): Holds lower-priority async tasks like setTimeout, setInterval, I/O, and DOM events. These enter the Call Stack only when both the Microtask Queue and Call Stack are empty.
 
-- Call Stack: ასრულებს კოდს თანმიმდევრულად.
+- Call Stack: Executes code in sequence.
 
-- Execution: კოდის საბოლოო შესრულება Call Stack-ში
+- Execution: Final code execution within the Call Stack.
 
 ---
 layout: two-cols
@@ -487,13 +487,11 @@ graph TD
 
 ::right::
 
-- Web APIs-ში მოთავსებულია სხვადასხვა ფუნქციები
+- Web APIs: Various functions are hosted here, such as DOM, Timers, and Fetch API.
 
-- როგორიცაა DOM, Timers და Fetch API
+- Callback Queue: Initially empty, waiting for tasks to be queued.
 
-- Callback Queue ცარიელია
-
-- Call Stack ელოდება ახალ ამოცანებს.
+- Call Stack: Awaits new tasks to execute.
 
 ---
 layout: two-cols
@@ -516,11 +514,11 @@ graph TD
 
 ::right::
 
-- ხდება DOM მოვლენა (click)  
+- DOM Event (click): A click event occurs in the DOM.
 
-- შესაბამისი callback გადადის Callback Queue-ში.
+- Callback to Callback Queue: The relevant callback function is placed in the Callback Queue.
 
-- Event Loop ამოწმებს, რომ Call Stack ცარიელია და მზად არის Callback Queue-დან ელემენტების გადასატანად call stack ში.
+- Event Loop Check: The Event Loop checks if the Call Stack is empty and prepares to move items from the Callback Queue to the Call Stack.
 
 ---
 layout: two-cols
@@ -544,11 +542,11 @@ graph TD
 
 ::right::
 
-- onClick callback გადადის Call Stack-ში და იწყებს შესრულებას
+- onClick Callback to Call Stack: The onClick callback moves to the Call Stack and starts executing.
 
-- Callback Queue დაცარიელდა 
+- Callback Queue is Empty: The Callback Queue is now cleared of tasks.
 
-- Call Stack მუშაობს, სანამ ფუნქცია არ დასრულდება და სტეკიდან ამოიშლება.
+- Call Stack Execution: The Call Stack processes the callback until it finishes and removes it from the stack.
 
 ---
 layout: two-cols
@@ -571,4 +569,4 @@ graph TD
 
 ::right::
 
-- შესრულდა ყველაფერი და callstack იც გაცარიელდა
+- All Tasks Complete: The Call Stack is now empty after execution, indicating all tasks have been completed.
