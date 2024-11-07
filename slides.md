@@ -1,4 +1,8 @@
 ---
+title: "JavaScript Behind the Scenes"
+description: "A deep dive into JavaScript's internals: memory management, the call stack, event loop, and more."
+image: "/js.photo.jpeg"
+url: "https://js-behind-the-scenes.netlify.app"
 theme: seriph
 background: "/js.photo.jpeg"
 ---
